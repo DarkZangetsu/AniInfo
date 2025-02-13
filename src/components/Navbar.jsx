@@ -31,11 +31,11 @@ const Logo = () => (
 
 // Navigation links with updated structure
 const navigationLinks = [
-    { href: "/", label: "Accueil" },
-    { href: "/animes", label: "Liste des Animés" },
-    { href: "/watchlist", label: "Ma Liste" },
-    { href: "/about", label: "À propos"},
-    { href: "/contact", label: "Contact"}
+    { href: "/", label: "Home" },
+    { href: "/animes", label: "Anime List" },
+    { href: "/watchlist", label: "My List" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" }
 ];
 
 // Enhanced NavLink component with hover effects
