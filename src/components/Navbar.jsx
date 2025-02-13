@@ -148,7 +148,7 @@ const Navbar = () => {
 
                     <div className="flex items-center">
                         <a
-                            href="https://github.com/yourusername/aniwatch"
+                            href="https://github.com/DarkZangetsu"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2 hover:text-blue-400 transition-colors duration-200"

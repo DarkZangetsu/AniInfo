@@ -45,7 +45,7 @@ const Footer = () => {
               Your go-to platform for comprehensive anime information, providing detailed insights and updates for all Japanese animation enthusiasts.
             </p>
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/DarkZangetsu" 
               className="inline-block hover:text-blue-400"
               target="_blank"
               rel="noopener noreferrer"
