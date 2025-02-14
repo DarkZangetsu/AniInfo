@@ -175,7 +175,6 @@ export default function Home() {
                   key={`trending-${anime.mal_id}-${index}`}
                   className={`absolute w-full h-full transition-opacity duration-500 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
                     }`}
-                  onClick={() => router.push(`/animes/${anime.mal_id}`)}
                 >
                   <div className="relative w-full h-full cursor-pointer">
                     <Image
