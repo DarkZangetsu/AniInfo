@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-//import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Star } from 'lucide-react';
 
 export default function Animes() {
   const [animes, setAnimes] = useState([]);
@@ -69,7 +69,7 @@ export default function Animes() {
     <Link href={`/animes/anime/${anime.mal_id}`}>
       <Card className="h-full hover:shadow-lg transition-shadow">
         <CardContent className="p-0">
-          <div className="relative h-[300px] group overflow-hidden">
+          <div className="relative h-[350px] group overflow-hidden">
             <div className="relative w-full h-full transform transition-transform duration-300 group-hover:scale-110">
               <Image
                 src={anime.images?.jpg?.large_image_url || "/api/placeholder/200/300"}
@@ -80,18 +80,24 @@ export default function Animes() {
                 quality={100}
               />
             </div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-              <h3 className="text-white font-semibold line-clamp-2 mb-2">{anime.title}</h3>
-              <div className="flex justify-between text-white/80 text-sm">
-                <span>Score: {anime.score || 'N/A'}</span>
-                <span>{anime.year || 'N/A'}</span>
-              </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+            <h3 className="text-white font-semibold line-clamp-2">{anime.title}</h3>
+            <div className="flex items-center space-x-2 mt-2">
+              <Star className="w-4 h-4 text-yellow-400" />
+              <span className="text-white/90 text-sm">{anime.score || 'N/A'}</span>
+              {anime.episodes && (
+                <span className="text-white/70 text-sm">• {anime.episodes} eps</span>
+              )}
             </div>
           </div>
+        </div>
         </CardContent>
       </Card>
     </Link>
   );
+
+
 
   if (error) {
     return (
@@ -131,7 +137,7 @@ export default function Animes() {
       </div>
 
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           {[...Array(8)].map((_, i) => (
             <div key={i} className="animate-pulse">
               <div className="bg-gray-200 h-[300px] rounded-lg mb-2"></div>
@@ -141,9 +147,9 @@ export default function Animes() {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {animes.map((anime) => (
-              <AnimeCard key={anime.mal_id} anime={anime} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+            {animes.map((anime, index) => (
+              <AnimeCard key={`${anime.mal_id}-${index}`} anime={anime} />
             ))}
           </div>
 

@@ -80,7 +80,7 @@ const MobileNav = () => (
                         </SheetClose>
                     ))}
                     <div className="my-4 border-t border-blue-900/30" />
-                    <div className="px-3 text-sm font-medium text-blue-400">Catégories</div>
+                    <div className="px-3 text-sm font-medium text-blue-400">Categories</div>
                     <div className="grid gap-1 mt-2">
                         {categories.map((category) => (
                             <SheetClose asChild key={category}>
@@ -111,7 +111,7 @@ const DesktopNav = () => (
             ))}
             <NavigationMenuItem>
                 <NavigationMenuTrigger className="hover:bg-blue-900/20 hover:text-blue-400">
-                    Catégories
+                    Categories
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:grid-cols-3 bg-gray-950 border border-blue-900/30 rounded-lg">

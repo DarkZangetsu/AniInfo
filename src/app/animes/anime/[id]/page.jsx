@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from 'next/link';
-import { ArrowLeft, Star, Users, Film, Trophy, Calendar } from 'lucide-react';
+import { ArrowLeft, Star, Users, Film, Trophy, Calendar, Play } from 'lucide-react';
 
 export default function Anime() {
   const params = useParams();
@@ -251,6 +251,35 @@ export default function Anime() {
               </TabsContent>
 
               <TabsContent value="details" className="space-y-6 mt-4">
+              {anime.trailer && anime.trailer.url && (
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    <h2 className="text-xl font-semibold mb-4 flex items-center text-white">
+                      <Play className="w-5 h-5 mr-2" />
+                      Trailer
+                    </h2>
+                    <div className="aspect-video w-full">
+                      <iframe
+                        src={anime.trailer.embed_url}
+                        width="100%"
+                        height="100%"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="rounded-lg"
+                      />
+                    </div>
+                    {anime.trailer.url && (
+                      <a
+                        href={anime.trailer.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-block text-blue-400 hover:text-blue-300 transition-colors"
+                      >
+                        Watch on YouTube
+                      </a>
+                    )}
+                  </div>
+                )}
                 {anime.studios && anime.studios.length > 0 && (
                   <div className="bg-gray-800 p-4 rounded-lg">
                     <h2 className="text-xl font-semibold mb-2 text-white">Studios</h2>
