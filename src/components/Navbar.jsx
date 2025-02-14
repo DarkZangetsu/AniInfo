@@ -24,7 +24,7 @@ import { categories } from './constants/categories';
 const Logo = () => (
     <div className="flex items-center space-x-2">
         <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-            Ani<span className="text-blue-500">Watch</span>
+            Ani<span className="text-blue-500">Info</span>
         </div>
     </div>
 );
@@ -56,7 +56,6 @@ const MobileNav = () => (
         <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="lg:hidden ml-2 hover:bg-blue-900/20">
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Menu principal</span>
             </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-80 bg-gray-950 border-r border-blue-900/30">
