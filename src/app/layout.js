@@ -10,8 +10,8 @@ const roboto = Roboto({
 })
 
 export const metadata = {
-  title: "AniWatch",
-  description: "Site de streaming d'animés",
+  title: "AniInfo",
+  description: "Anime Info WebSite",
 }
 
 export default function RootLayout({ children }) {

@@ -39,7 +39,7 @@ const Footer = () => {
           {/* Logo and description */}
           <div>
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-4">
-              Ani<span className="text-blue-500">Watch</span>
+              Ani<span className="text-blue-500">Info</span>
             </div>
             <p className="text-sm mb-4">
               Your go-to platform for comprehensive anime information, providing detailed insights and updates for all Japanese animation enthusiasts.
@@ -102,7 +102,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="text-sm">
-            © {new Date().getFullYear()} AniWatch. All rights reserved.
+            © {new Date().getFullYear()} AniInfo. All rights reserved.
           </div>
         </div>
       </div>
